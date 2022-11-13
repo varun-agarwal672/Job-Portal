@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load is_already_applied %}
+{% block title %}
+    Job Details
+{% endblock %}
+
+{% block content %}
+<!--different sections for making pages attractive-->
+    <section class="bg-light-gray">
+        <div class="container">
+            <h1 class="heading"><font color="brown">{{ job.title }}</font><br>
+                <small> at <font color="blue"><b>{{ job.company_name }}</b></font></small>
+            </h1>
+            <div class="job-detail-description"><i class="fa fa-map-marker job__location"> </i>
+                <b>{{ job.location }}</b> |
+                {% if job.type == '1' %}
+                    <span class="badge featured-badge badge-success">Full time</span>
+                {% else %}
+                    <span class="badge featured-badge badge-warning">Internship</span>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3>Category: {{ job.category }}</h3>
+                    <h5>Last date: {{ job.last_date|date }}</h5>
+                    <h5 class="text-info">Salary: {{ job.salary }}</h5>
+                    <blockquote class="blockquote">
+                        <p>{{ job.description }}</p>
+                    </blockquote>
+                    <div class="job-detail__apply-bottom">
+                        {% if request.user.is_authenticated and request.user.role == 'employee' %}
+                            {% is_already_applied job request.user as is_applied %}
+                            {% if is_applied %}
+                                <input type="button" class="btn btn-info" value="Already applied"/>
+                            {% else %}
+                                <form action="{% url 'JobWork:apply-job' job.id %}" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="job" value="{{ job.id }}">
+                                    <input type="submit" class="btn btn-success" value="Apply for this job"/>
+                                </form>
+                            {% endif %}
+                        {% elif request.user.is_authenticated and request.user.role == 'employer' %}
+                        {% else %}
+                            <form action="{% url 'JobWork:apply-job' job.id %}" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="job" value="{{ job.id }}">
+                                <input type="submit" class="btn btn-success" value="Apply for this job"/>
+                            </form>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

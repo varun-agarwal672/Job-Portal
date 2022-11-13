@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+<div class="container-fluid px-0">
+<img src="{% static 'img/5.jpg' %}" width=800 height=250 class="d-block w-100" alt="contact logo">
+</div>
+<!--Creating contact form for taking query and displaying message-->
+<div class="container mb-3 py-4">
+    <form method="post" action="/contact">
+        {% csrf_token %}
+        <div class="form-group pt-4">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name">
+        </div>
+        <div class="form-group pt-4">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+        </div>
+        <div class="form-group pt-4">
+            <label for="phone">Phone Number</label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number">
+        </div>      
+        <div class="form-group pt-4 pb-4">
+            <label for="desc">Describe the reason...</label>
+            <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>
+
+{% endblock %}

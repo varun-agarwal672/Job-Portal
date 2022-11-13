@@ -1,0 +1,32 @@
+Programmer: C++ Java Python
+Computer programmers create code for software and computer applications and programs.
+They write and test code that allows computer applications and programs to function.
+They translate designs from software developers and engineers into workable code.
+They also update or expand the code of existing programs or test programs for errors, finding and resolving faulty lines of code.
+
+Developers:
+Software developers conceive of, design, and build computer programs.
+They develop new applications for mobile or desktop use, while others build underlying operating systems.
+They identify user needs, build programs, test out new software, and make improvements.
+They fill crucial roles in the computer systems, manufacturing, finance, and software publishing industries.
+
+Web developers create websites.
+They focus on front-end development, which involves designing sites and producing content, or back-end development, which involves writing code to make website features work.
+They may also become webmasters for a site, providing maintenance, updates, and troubleshooting when needed.
+
+Database Administrators:
+Database administrators or managers create and maintain databases compatible with the company's needs.
+They maintain and protect sensitive information and provide access to important datasets for companies, institutions, and government bodies.
+They organize sensitive datasets such as financial records, purchase histories, and customer details, and make materials available to other professionals while maintaining information security and privacy settings.
+They also back up, restore, and troubleshoot database sets and system access, updating and integrating old programs to implement the latest technology.
+
+Analysts:
+Systems analysts work to optimize user experience with programs.
+They advise employers and clients on which software they may need, implement the software, and liaise with users to ensure the programs function properly. They survey and diagnose database program issues, resolve user issues, and advise management about systems innovations to improve productivity.
+This role requires communication and interpersonal skills, plus an understanding of standard and new technologies.
+
+Security analysts work to secure information networks and systems in an organization.
+They protect computer networks by monitoring for and responding to threats. 
+They oversee computer network systems to stave off potential security breaches. 
+They maintain systems by updating software and recommending security updates to management.
+They also work one on one with employees to help them understand new programs and hardware.

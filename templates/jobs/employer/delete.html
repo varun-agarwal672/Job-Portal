@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Delete Job
+{% endblock %}
+
+{% block content %}
+<section class="bg-light-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <form method="post">
+                    {% csrf_token %}
+                    <h1 class="heading">Are you sure you want to delete Job?</h1>
+                    <input type="submit" value="Confirm" class="btn btn-dark col-lg-12 mt-2 mb-5">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

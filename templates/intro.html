@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Introduction{% endblock %}
+
+{% block content %}
+    <section class="bg-light-gray pt-0 pb-4">
+        {% if request.user.is_authenticated and request.user.role == 'employer' %}
+            <img src="{% static 'img/11.jpg' %}" width=700 height=250 class="d-block w-100" alt="hiring">
+            <h1 class="heading pt-1 pb-1">Welcome,<font color="brown"> {{ request.user.first_name }} Company</font>
+                <br>
+                <small><font color="blue"><b>{{ request.user.last_name }}</b></font></small>
+            </h1>
+        {% elif request.user.is_authenticated and request.user.role == 'employee' %}
+            <img src="{% static 'img/10.jpg' %}" width=700 height=250 class="d-block w-100" alt="vacancy">
+            <h1 class="heading pt-4 pb-2">Welcome,<font color="brown"> {{ request.user.first_name }}
+                 {{ request.user.last_name }}</font>
+            </h1>
+        {% endif %}
+    </section>
+    
+
+{% endblock %}
